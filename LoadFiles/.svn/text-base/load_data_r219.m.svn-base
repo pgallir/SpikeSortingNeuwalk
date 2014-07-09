@@ -1,0 +1,28 @@
+function [data,EXs,TOT_INFOs] = load_data_r219(data,addr,OutFlag)
+      
+   % 
+        % ratto&esercizio&data  % radice         % identificativo esercizio
+   EXs = { 
+          % QTM                
+          % QRW          
+          % QCRW                 
+          % Qlad
+          % Surprise
+          };    
+                  % radice         % identificativo blocchi         % trials 
+   TOT_INFOs = {};   
+   % 
+  
+   
+   if  strcmp(OutFlag,'update_data')         
+       % define root of the rat
+       ROOT = cd; 
+       data.rat_folder = [addr.RAW, '/NeuWalk Divas/r219'];           
+       % identificativo esercizio   % indirizzo cartella raw data   
+       ADDRESSES = AddressExercize(data);     
+       % load all informations
+       data = evalData(data,EXs,TOT_INFOs,ADDRESSES,ROOT);
+   end
+   
+end
+

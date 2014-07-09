@@ -1,0 +1,39 @@
+function [data,EXs,TOT_INFOs] = load_data_r217(data,addr,OutFlag)
+      
+   % 
+        % ratto&esercizio&data  % radice         % identificativo esercizio
+   EXs = { 
+          % QTM                
+          % QRW          
+          'r217_QRW_19Apr', 'r217_04_19_13', 'QRW'; ...    
+          'r217_QRW_23Apr', 'r217_04_23_13', 'QRW'; ...    
+          % QCRW                 
+          'r217_QCRW_19Apr', 'r217_04_19_13', 'QCRW'; ...   
+          % Qlad
+          'r217_Qlad_23Apr', 'r217_04_23_13', 'Qlad'; ... 
+          'r217_Qlad_5May', 'r217_05_05_13', 'Qlad'; ... 
+          'r217_Qlad_10May', 'r217_05_10_13', 'Qlad'; ... 
+          % Surprise
+          'r217_Surprise_23Apr', 'r217_04_23_13', 'Surprise'; ... 
+          };    
+                  % radice         % identificativo blocchi         % trials 
+   TOT_INFOs = {'r217_04_19_13', {'r217_04_19_13_info_Block-1.mat', [1 50]};  ... 
+                'r217_04_23_13', {'r217_04_23_13_info_Block-1.mat', [1 40]};  ... 
+                'r217_05_05_13', {'r217_05_05_13_info_Block-1.mat', [1 34]};  ... 
+                'r217_05_10_13', {'r217_05_10_13_info_Block-1.mat', [1 30]};  ... 
+                };   
+   % 
+  
+   
+   if  strcmp(OutFlag,'update_data')         
+       % define root of the rat
+       ROOT = cd; 
+       data.rat_folder = [addr.RAW, '/NeuWalk Divas/r217'];           
+       % identificativo esercizio   % indirizzo cartella raw data   
+       ADDRESSES = AddressExercize(data);     
+       % load all informations
+       data = evalData(data,EXs,TOT_INFOs,ADDRESSES,ROOT);
+   end
+   
+end
+

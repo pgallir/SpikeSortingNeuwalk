@@ -1,0 +1,29 @@
+function data = load_data_r429(data,addr)
+     
+   % define root of the rat
+   ROOT = cd; 
+   data.rat_folder = [addr.RAW, '/PILOT/#429'];       
+   %
+        % ratto&esercizio&data  % radice         % identificativo esercizio
+   EXs = {'r429_PILOT_23Jan12',    'r429_01_23_12', 'PILOT';    ...                      
+          'r429_PILOT_31Jan12',    'r429_01_31_12', 'PILOT';    ...                      
+          'r429_PILOT_07Feb12',    'r429_02_07_12', 'PILOT';    ...                      
+          'r429_PILOT_13Feb12',    'r429_02_13_12', 'PILOT';    ...                      
+          };                         
+
+   %   
+                  % radice         % identificativo blocchi         % trials 
+   TOT_INFOs = {'r429_01_23_12', {'r429_01_23_12_info_Block-2.mat', [2 5]}; ... 
+                'r429_01_31_12', {'r429_01_31_12_info_Block-1.mat', [1 5]}; ... 
+                'r429_02_07_12', {'r429_02_07_12_info_Block-1.mat', [1 5]}; ... 
+                'r429_02_13_12', {'r429_02_13_12_info_Block-1.mat', [1 3]}; ... 
+               };                  
+   %            
+                % identificativo esercizio   % indirizzo cartella raw data        
+   ADDRESSES = {'PILOT',               [data.rat_folder, '/Neural_RAW']; ...  
+               };             
+                                     
+
+   % load all informations
+   data = evalData(data,EXs,TOT_INFOs,ADDRESSES,ROOT);
+end

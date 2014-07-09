@@ -1,0 +1,102 @@
+% readData batch
+
+% if CheckGoodtimes == 0, it sorts
+% if CheckGoodtimes == 1, it plots signals for visual checking
+CheckGoodtimes = 0; 
+
+
+for r = [330 332] % loop missing rats
+
+    %% pre deliverable
+    if r == 10
+    
+        
+    elseif r == 195
+    
+    %% BEASTs
+    elseif r == 238   
+    EXPERIMENTs = {}; 
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end
+        
+    elseif r == 239    
+    EXPERIMENTs = {};
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end
+
+    elseif r == 240
+    EXPERIMENTs = {}; 
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end
+
+    %% DIVAs
+    elseif r == 327    
+    EXPERIMENTs = {};
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end
+
+    elseif r == 329   
+    EXPERIMENTs = {}; 
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end 
+    
+    
+    elseif r == 330
+    EXPERIMENTs = {'r330_QRW_16Jul'}; 
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end 
+
+
+    elseif r == 332
+    EXPERIMENTs =  {};  
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end
+
+
+    elseif r == 333
+    EXPERIMENTs =  {};  
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end
+
+
+    elseif r == 334
+    EXPERIMENTs =  {};  
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end
+
+    elseif r == 335
+    EXPERIMENTs =  {}; 
+%     EXPERIMENTs =  {'r335_Qlad_06Jul'};  
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end            
+
+    elseif r == 336
+    EXPERIMENTs =  {}; 
+%     EXPERIMENTs =  {'r336_BipRW_07Jul' 'r336_Qlad_06Jul'};
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end        
+
+    
+    %% prova elettrodo
+    elseif r == 429
+    EXPERIMENTs =  {};  
+    for iEx = 1:numel(EXPERIMENTs)
+        readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
+    end     
+    
+    
+    end         
+       
+ 
+end

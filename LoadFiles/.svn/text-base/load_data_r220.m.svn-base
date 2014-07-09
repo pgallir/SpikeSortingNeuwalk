@@ -1,0 +1,39 @@
+function [data,EXs,TOT_INFOs] = load_data_r220(data,addr,OutFlag)
+      
+   % 
+        % ratto&esercizio&data  % radice         % identificativo esercizio
+   EXs = { 
+          % QTM                          
+          % QRW          
+          'r220_QRW_19Apr', 'r220_04_19_13', 'QRW'; ... 
+          'r220_QRW_23Apr', 'r220_04_23_13', 'QRW'; ... 
+          % QCRW                 
+          'r220_QCRW_19Apr', 'r220_04_19_13', 'QCRW'; ... 
+          % Qlad
+          'r220_Qlad_23Apr', 'r220_04_23_13', 'Qlad'; ... 
+          'r220_Qlad_29Apr', 'r220_04_29_13', 'Qlad'; ... 
+          'r220_Qlad_5May', 'r220_05_05_13', 'Qlad'; ... 
+          % Surprise
+          'r220_Surprise_23Apr', 'r220_04_23_13', 'Surprise'; ... 
+          };    
+                  % radice         % identificativo blocchi         % trials 
+   TOT_INFOs = {'r220_04_19_13', {'r220_04_19_13_info_Block-1.mat', [1 52]};  ... 
+                'r220_04_23_13', {'r220_04_23_13_info_Block-1.mat', [1 35]};  ... 
+                'r220_04_29_13', {'r220_04_29_13_info_Block-1_err_corr.mat', [1 38]};  ... 
+                'r220_05_05_13', {'r220_05_05_13_info_Block-1_err_corr.mat', [1 29]};  ... 
+                };   
+   % 
+  
+   
+   if  strcmp(OutFlag,'update_data')         
+       % define root of the rat
+       ROOT = cd; 
+       data.rat_folder = [addr.RAW, '/NeuWalk Divas/r220'];           
+       % identificativo esercizio   % indirizzo cartella raw data   
+       ADDRESSES = AddressExercize(data);     
+       % load all informations
+       data = evalData(data,EXs,TOT_INFOs,ADDRESSES,ROOT);
+   end
+   
+end
+
