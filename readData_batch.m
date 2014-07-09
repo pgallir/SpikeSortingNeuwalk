@@ -6,7 +6,7 @@ CheckGoodtimes = 0;
 
 
 
-for r = 217 % loop missing rats % 217,218,215
+for r = [218,220] % loop missing rats % 217,218,215
 
     %% pre deliverable
     if r == 10
@@ -48,13 +48,13 @@ for r = 217 % loop missing rats % 217,218,215
     end
 
     elseif r == 217    
-    EXPERIMENTs = {'r217_QRW_6May'};
+    EXPERIMENTs = {};
     for iEx = 1:numel(EXPERIMENTs)
         readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
     end
 
     elseif r == 218    
-    EXPERIMENTs = {};
+    EXPERIMENTs = {'r218_QRW_7May','r218_QCRW_7May'};
     for iEx = 1:numel(EXPERIMENTs)
         readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
     end
@@ -66,7 +66,7 @@ for r = 217 % loop missing rats % 217,218,215
     end
     
     elseif r == 220    
-    EXPERIMENTs = {};
+    EXPERIMENTs = {'r220_QRW_19Apr'};
     for iEx = 1:numel(EXPERIMENTs)
         readData_rat_ex_day(CheckGoodtimes,r,EXPERIMENTs{iEx}); 
     end
